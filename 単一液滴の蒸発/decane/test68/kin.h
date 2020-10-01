@@ -1,0 +1,1 @@
+void Compute_Chemical_Kinetics(double *omega,double T, double *Y, double *ci, double rog);
