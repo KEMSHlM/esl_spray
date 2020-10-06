@@ -13,7 +13,7 @@ void output(int k);
 void output2(int k);
 void output3(int k);
 
-/*Å@basic unit is [m], [kg], [K], [mol] */
+/*?@basic unit is [m], [kg], [K], [mol] */
 
 #define Kmax 5000000
 #define Mmax 1000000
@@ -24,9 +24,9 @@ void output3(int k);
 #define MCGmax 1000
 #define kchange 100
 
-static int Nl=10,Ng=18,NQ=22,NX=100,NZ=200,OUP=0,ELM,NODE;
+static int Nl=10,Ng=18,NQ=22,NX=200,NZ=400,OUP=0,ELM,NODE;
 static double Rs0=0.35e-3,Rsmin=0.005e-3,timestop;
-static double Lmax=20.0e-3,Xmax=10.0e-3,rmax=1.2e-3,ld;
+static double Lmax=40.0e-3,Xmax=20.0e-3,rmax=1.2e-3,ld;
 static double Tl0=300.0,Pa,Ta,dt=1.0E-5;
 static double Rs,Rdot,Rsold,*mdoti,mdot;
 static double hrl,byhrl,hrg,byhrg,hs,byhs,hx,byhx,hz,byhz;
@@ -1964,7 +1964,7 @@ void Tgs_cal()/*Complete*/
 	}
 }
 
-void ur_cal() /* Complete */  /* ÇPéüê∏ìx */
+void ur_cal() /* Complete */  /* ?P?????x */
 {
 	int i,j,ii=NQ-1,sp;
 	double AA,RdotbyRs,byRs;
@@ -4070,7 +4070,7 @@ int SMAC_method()
 
 	if(m==Mmax)
 	{
-		printf("à≥óÕÇ™é˚ë©ÇµÇ‹ÇπÇÒÇ≈ÇµÇΩ\ter=%le\n",er);
+		printf("????????????????????????\ter=%le\n",er);
 		exit(1);
 	}
 
@@ -4219,7 +4219,7 @@ void boundarys_cal()
 		Rsold2 = Rs;
 		for(i=0;i<NQ;i++)
 		{
-			/* èâä˙ílíTçı */
+			/* ?????l?T?? */
 			Ts1 = Tls[i][Nl]+5.0;
 			F1 = Ts_boundary(i,Ts1);
 			Ts2 = Tls[i][Nl]-5.0;
@@ -4240,11 +4240,11 @@ void boundarys_cal()
 				}while(flg==0&&k<10);
 				if(k==10)
 				{
-					printf("èâä˙ílÇ™å©Ç¬Ç©ÇËÇ‹ÇπÇÒÇ≈ÇµÇΩ\n");
+					printf("?????l??????????????????????\n");
 					exit(1);
 				}
 			}
-			/* 2ï™ñ@ */
+			/* 2???@ */
 			k = 0;
 			Tsflg=0;
 			do
@@ -4270,13 +4270,13 @@ void boundarys_cal()
 			}while(k<Mmax&&dTs>erefZ&&Tsflg==0);
 			if(k==Mmax)
 			{
-				printf("âÇ™å©Ç¬Ç©ÇËÇ‹ÇπÇÒÇ≈ÇµÇΩ\n");
+				printf("????????????????????????\n");
 				exit(1);
 			}
 			Tls[i][Nl] = Tgs[i][0] = 0.5*(Ts1+Ts2);
 		}
 
-		/* mdotïΩãœíl */
+		/* mdot?????l */
 		AA = 1.0/log(rmax/Rs);
 		for(i=0;i<NQ;i++)
 		{
@@ -4299,7 +4299,7 @@ void boundarys_cal()
 	}while(dRs>erefZ&&g<Mmax);
 	if(g==Mmax)
 	{
-		printf("âtìHåaÇ™é˚ë©ÇµÇ‹ÇπÇÒÇ≈ÇµÇΩ\n");
+		printf("?t?H?a????????????????????\n");
 		exit(1);
 	}
 	for(i=0;i<NQ;i++)
@@ -6280,7 +6280,7 @@ er=1;
 
 	//if(mm==MCGmax)
 	//{
-		//printf("à≥óÕÇ™é˚ë©ÇµÇ‹ÇπÇÒÇ≈ÇµÇΩ\ter=%le\n",er);
+		//printf("????????????????????????\ter=%le\n",er);
 		printf("er=%le\n",er);
 	//	exit(1);
 	//}
